@@ -1,11 +1,13 @@
- <template>
-  <img :src="source" alt="Ilustaration" class="img-fluid" />
+<template>
+  <div class="description text-color">
+    {{ content }}
+  </div>
 </template>
 <script>
 export default {
-  name: "Image",
+  name: "Description",
   props: {
-    source: {
+    content: {
       type: String,
       required: true,
     },

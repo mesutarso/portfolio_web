@@ -1,16 +1,14 @@
 <template>
-  <b-navbar-brand to="/" class="header__logo"
-    >Mechack <span class="secondary-color">Tambwe</span></b-navbar-brand
-  >
+  <b-navbar-brand class="primary-color header__logo">
+    <router-link to="/" custom v-slot="{ navigate }">
+      <span @click="navigate" @keypress.enter="navigate" role="link">
+        Mechack <span class="secondary-color">Tambwe</span></span
+      >
+    </router-link>
+  </b-navbar-brand>
 </template>
 <script>
 export default {
   name: "Logo",
-  props: {
-    color: {
-      type: String,
-      default: "primary-color",
-    },
-  },
 };
 </script>

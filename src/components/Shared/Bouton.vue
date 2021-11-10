@@ -1,5 +1,11 @@
 <template>
-  <b-button :href="{ link }">{{ title }}</b-button>
+  <b-link class="btn-link">
+    <router-link :to="link" custom v-slot="{ navigate }">
+      <span @click="navigate" @keypress.enter="navigate" role="link">
+        {{ title }}</span
+      >
+    </router-link>
+  </b-link>
 </template>
 <script>
 export default {
