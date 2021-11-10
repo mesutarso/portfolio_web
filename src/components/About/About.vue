@@ -1,7 +1,9 @@
 <template>
   <section class="about">
     <b-row class="flex-wrap align-items-center">
-      <b-col md="6" sm="12"> </b-col>
+      <b-col md="6" sm="12">
+        <AboutImage />
+      </b-col>
       <b-col md="6" sm="12">
         <div class="about__title">
           <SubHeading
@@ -29,12 +31,14 @@
 import SubHeading from "../Shared/SubHeading.vue";
 import Description from "../Shared/Description.vue";
 import Bouton from "../Shared/Bouton.vue";
+import AboutImage from "./AboutImage.vue";
 export default {
   name: "About",
   components: {
     SubHeading,
     Description,
     Bouton,
+    AboutImage,
   },
 };
 </script>
