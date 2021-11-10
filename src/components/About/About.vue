@@ -1,18 +1,14 @@
 <template>
-  <section class="about">
+  <section class="about" id="a-propos">
     <b-row class="flex-wrap align-items-center">
       <b-col md="6" sm="12">
         <AboutImage />
       </b-col>
       <b-col md="6" sm="12">
         <div class="about__title">
-          <SubHeading
-            title="5 ans d'expérience dans le développement web et mobile"
-            class="secondary-color"
-          />
+          <SubHeading title="A propos de Moi" class="secondary-color" />
           <p class="description primary-color">
-            Je suis un développeur web passionné par le développement web et
-            l'informatique.
+            5 ans d'expérience dans le développement web et mobile
           </p>
         </div>
         <div class="about__description">

@@ -1,0 +1,51 @@
+.skills {
+  padding: 50px 100px !important;
+  @media (max-width: 998px) {
+    padding: 30px 50px !important;
+  }
+  &__btn {
+    text-align: left;
+    @media (max-width: 998px) {
+      text-align: center;
+    }
+  }
+  &__card {
+    width: 90%;
+    padding: 13px 20px;
+    background-color: $primaryColor;
+    @media (max-width: 998px) {
+      width: 100%;
+    }
+  }
+  &__card-icon {
+    font-size: 40px;
+    text-align: left;
+  }
+  &__card-title {
+    @media (max-width: 998px) {
+      .sub-heading {
+        font-size: 1.3em !important;
+        text-align: left !important;
+      }
+    }
+  }
+  &__card-description {
+    @media (max-width: 998px) {
+      .description {
+        font-size: 0.7em;
+        text-align: left;
+      }
+    }
+  }
+  &__listItem {
+    padding-bottom: 30px;
+    @media (max-width: 998px) {
+      align-items: center !important;
+      justify-content: center;
+    }
+    &-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  }
+}
