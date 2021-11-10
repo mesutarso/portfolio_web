@@ -1,4 +1,75 @@
+@import 'variables/colors', 'variables/fonts', 'sections/header',
+  'sections/hero', 'sections/footer';
 * {
   margin: 0;
-  background: #000;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFamily;
+}
+.bg-color {
+  background-color: $primaryColor !important;
+}
+.bg-color-2 {
+  background-color: $secondaryColor !important;
+}
+.bg-black {
+  background-color: $textColor;
+}
+
+.primary-color {
+  color: $primaryColor !important;
+}
+.secondary-color {
+  color: $secondaryColor !important;
+}
+.text-color {
+  color: $textColor !important;
+}
+.white-color {
+  color: $whiteColor !important;
+}
+.heading {
+  font-size: 3.7em;
+  text-align: left;
+  font-weight: 700;
+  @media (max-width: 998px) {
+    font-size: 2.7em;
+    text-align: center;
+  }
+}
+.sub-heading {
+  font-size: 2em;
+  text-align: left;
+  font-weight: 700;
+  @media (max-width: 998px) {
+    font-size: 1.7em;
+    text-align: center;
+  }
+}
+.description {
+  font-size: 1.4em;
+  text-align: left;
+  font-weight: 400;
+  @media (max-width: 998px) {
+    font-size: 1em;
+    text-align: center;
+  }
+}
+.btn-link {
+  text-decoration: none !important;
+  padding: 16px 25px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: $primaryColor;
+  color: #fff;
+  &:hover {
+    background-color: $secondaryColor;
+    color: $primaryColor;
+    transition: all 0.3s ease-in-out;
+  }
+  @media (max-width: 998px) {
+    width: 100%;
+  }
 }
