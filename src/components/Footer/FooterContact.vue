@@ -7,19 +7,17 @@
         </span>
       </h4>
     </div>
-    <b-row
-      class="
-        footer__links
-        flex-column
-        justify-content-start
-        align-items-start
-        mt-4
-      "
-    >
-      <b-col v-for="link in links" :key="link.title">
-        <b-link :href="link.link" class="d-flex write-color">
-          <Icon :icon="link.icon" />
-          <h5 class="text-light">{{ link.title }}</h5>
+    <b-row class="footer__contact-row flex-column mt-4">
+      <b-col
+        v-for="link in links"
+        :key="link.title"
+        class="footer__contact-col d-flex align-items-center"
+      >
+        <b-link :href="link.link" class="d-flex write-color mb-3">
+          <Icon :icon="link.icon" class="text-light iconSize" />
+          <h5 class="text-light mx-2 footer__contact pt-2">
+            {{ link.title }}
+          </h5>
         </b-link>
       </b-col>
     </b-row>
@@ -50,12 +48,12 @@ export default {
         {
           title: "Email",
           link: "mailto:mechacktambwe@gmail.com",
-          icon: "ci:email",
+          icon: "carbon:email",
         },
         {
           title: "Whatsapp",
           link: "https://wa.me/+243852214059",
-          icon: "ci:whatsapp",
+          icon: "akar-icons:whatsapp-fill",
         },
       ],
     };

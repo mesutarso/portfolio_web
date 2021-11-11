@@ -26,6 +26,11 @@
         <FooterContact />
       </b-col>
     </b-row>
+    <b-row>
+      <b-col>
+        <Copyright />
+      </b-col>
+    </b-row>
   </footer>
 </template>
 <script>
@@ -34,6 +39,7 @@ import Logo from "../Shared/Logo.vue";
 import Icon from "./Icon.vue";
 import FooterNavBar from "./FooterNavBar.vue";
 import FooterContact from "./FooterContact.vue";
+import Copyright from "./Copyright.vue";
 export default {
   name: "Footer",
   components: {
@@ -42,6 +48,7 @@ export default {
     Icon,
     FooterNavBar,
     FooterContact,
+    Copyright,
   },
   data() {
     return {

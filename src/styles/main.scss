@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: $fontFamily;
 }
+body {
+  overflow-x: hidden;
+}
 a {
   text-decoration: none !important;
 }
@@ -74,5 +77,11 @@ a {
   }
   @media (max-width: 998px) {
     width: 100%;
+  }
+}
+.iconSize {
+  font-size: 40px;
+  @media (max-width: 998px) {
+    font-size: 2em;
   }
 }

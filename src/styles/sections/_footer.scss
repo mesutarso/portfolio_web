@@ -1,5 +1,5 @@
 .footer {
-  padding: 100px !important;
+  padding: 100px 100px 20px !important;
   background-color: $textColor;
   @media (max-width: 998px) {
     padding: 30px 50px !important;
@@ -14,18 +14,22 @@
   }
   &__navbar {
     padding-left: 30px;
+    @media (max-width: 998px) {
+      padding: 0;
+    }
   }
   &__title {
     .title {
       color: $whiteColor;
       text-align: left;
       @media (max-width: 998px) {
-        font-size: 30px;
-        text-align: center;
+        font-size: 20px;
+        text-align: center !important;
       }
     }
   }
-  &__nav-item {
+  &__nav-item,
+  &__contact {
     list-style: none;
     font-size: 16px;
     margin-bottom: 20px;
@@ -35,8 +39,17 @@
       text-align: center;
     }
     color: $whiteColor;
-    &:hover a {
-      color: $secondaryColor;
+    &:hover > a {
+      color: $secondaryColor !important;
     }
+  }
+  &__contact-col {
+    @media screen and (max-width: 998px) {
+      justify-content: center;
+    }
+  }
+  &__copyright {
+    border-top: 1px solid $whiteColor;
+    padding-top: 20px;
   }
 }
