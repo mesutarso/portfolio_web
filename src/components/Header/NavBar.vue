@@ -48,19 +48,19 @@ export default {
         },
         {
           name: "A propos",
-          url: "#a-propos",
+          url: "/#a-propos",
         },
         {
           name: "Compétences",
-          url: "#competences",
+          url: "/#competences",
         },
         {
           name: "Projects",
-          url: "#projects",
+          url: "/#projects",
         },
         {
           name: "Contact",
-          url: "#contact",
+          url: "/#contact",
         },
       ],
     };

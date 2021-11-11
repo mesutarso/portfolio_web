@@ -1,0 +1,35 @@
+.contact {
+  padding: 50px 100px !important;
+  @media (max-width: 998px) {
+    padding: 30px 50px !important;
+  }
+  &__btn {
+    text-align: left;
+    @media (max-width: 998px) {
+      text-align: center;
+    }
+  }
+  &__form {
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: $primaryColor;
+      margin-bottom: 10px;
+    }
+    input,
+    select {
+      width: 100%;
+      height: 40px;
+      border: 1px solid $primaryColor;
+      border-radius: 5px;
+      padding: 0 15px;
+      font-size: 14px;
+      color: $primaryColor;
+      margin-bottom: 20px;
+      &:focus {
+        outline: none;
+        border: 1px solid $primaryColor;
+      }
+    }
+  }
+}

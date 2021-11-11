@@ -25,7 +25,7 @@
   </section>
 </template>
 <script>
-import Illustration from "./Illustration.vue";
+import Illustration from "../Shared/Illustration.vue";
 import Heading from "../Shared/Heading.vue";
 import SubHeading from "../Shared/SubHeading.vue";
 import Description from "../Shared/Description.vue";

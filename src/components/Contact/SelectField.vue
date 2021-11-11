@@ -1,46 +1,43 @@
 <template>
-  <b-form-group :label="label" :label-for="id" class="contact__input mb-4">
-    <b-form-input
+  <b-form-group
+    :id="'groupe-' + id"
+    :label="label"
+    label-for="id"
+    class="contact__select mb-4"
+  >
+    <b-form-select
       :id="id"
       v-model="model"
-      :placeholder="placeholder"
-      :type="type"
+      :options="options"
+      class="form-select"
       required
-    ></b-form-input>
+    ></b-form-select>
     <span v-if="error" class="contact__error red-text">{{ error }}</span>
   </b-form-group>
 </template>
 <script>
 export default {
-  name: "InputField",
+  name: "SelectField",
   props: {
-    label: {
-      type: String,
-      required: true,
-    },
     id: {
       type: String,
       required: true,
     },
-    placeholder: {
+    label: {
       type: String,
-      required: false,
-      default: "",
+      required: true,
     },
-    type: {
-      type: String,
-      required: false,
-      default: "text",
-    },
-
     model: {
       type: String,
+      required: true,
+    },
+    options: {
+      type: Array,
       required: true,
     },
     error: {
       type: String,
       required: false,
-      default: "",
     },
   },
 };
