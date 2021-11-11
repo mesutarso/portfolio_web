@@ -29,7 +29,7 @@ export default {
     },
     model: {
       type: String,
-      required: true,
+      required: false,
     },
     options: {
       type: Array,

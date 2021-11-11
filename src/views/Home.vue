@@ -4,6 +4,7 @@
     <Hero />
     <About />
     <Skills />
+    <Projects />
     <Contact />
     <Footer />
   </div>
@@ -16,8 +17,9 @@ import Header from "@/components/Header/Header.vue";
 import Hero from "@/components/Hero/Hero.vue";
 import About from "@/components/About/About.vue";
 import Skills from "@/components/Skills/Skills.vue";
-import Footer from "@/components/Footer/Footer.vue";
+import Projects from "@/components/Projects/Projects.vue";
 import Contact from "@/components/Contact/Contact.vue";
+import Footer from "@/components/Footer/Footer.vue";
 
 export default {
   name: "Home",
@@ -27,6 +29,7 @@ export default {
     About,
     Skills,
     Contact,
+    Projects,
     Footer,
   },
 };

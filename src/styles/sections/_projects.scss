@@ -1,0 +1,14 @@
+.projects {
+  background-color: $primaryColor;
+  color: $whiteColor;
+  padding: 50px 100px !important;
+  @media (max-width: 998px) {
+    padding: 30px 50px !important;
+  }
+  &__btn {
+    text-align: left;
+    @media (max-width: 998px) {
+      text-align: center;
+    }
+  }
+}

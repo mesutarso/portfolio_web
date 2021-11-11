@@ -35,7 +35,7 @@ export default {
 
     model: {
       type: String,
-      required: true,
+      required: false,
     },
     error: {
       type: String,
