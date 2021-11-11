@@ -1,11 +1,42 @@
 .footer {
-  padding: 50px 100px !important;
+  padding: 100px !important;
+  background-color: $textColor;
   @media (max-width: 998px) {
     padding: 30px 50px !important;
   }
   color: $whiteColor;
-  &__social-icons {
-    margin-top: 30px;
-    font-size: 25px;
+  &__social-link {
+    font-size: 40px;
+    color: $whiteColor;
+    &:hover {
+      color: $secondaryColor;
+    }
+  }
+  &__navbar {
+    padding-left: 30px;
+  }
+  &__title {
+    .title {
+      color: $whiteColor;
+      text-align: left;
+      @media (max-width: 998px) {
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+  }
+  &__nav-item {
+    list-style: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: left;
+    @media (max-width: 998px) {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    color: $whiteColor;
+    &:hover a {
+      color: $secondaryColor;
+    }
   }
 }

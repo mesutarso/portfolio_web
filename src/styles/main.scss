@@ -6,6 +6,9 @@
   box-sizing: border-box;
   font-family: $fontFamily;
 }
+a {
+  text-decoration: none !important;
+}
 .bg-color {
   background-color: $primaryColor !important;
 }

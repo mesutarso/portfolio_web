@@ -3,7 +3,8 @@
     <Header />
     <Hero />
     <About />
-    <Skills id="competences" />
+    <Skills />
+    <Footer />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Header from "@/components/Header/Header.vue";
 import Hero from "@/components/Hero/Hero.vue";
 import About from "@/components/About/About.vue";
 import Skills from "@/components/Skills/Skills.vue";
+import Footer from "@/components/Footer/Footer.vue";
 
 export default {
   name: "Home",
@@ -22,6 +24,7 @@ export default {
     Hero,
     About,
     Skills,
+    Footer,
   },
 };
 </script>

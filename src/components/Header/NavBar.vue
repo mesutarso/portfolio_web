@@ -5,7 +5,7 @@
     sticky
     class="d-flex justify-content-around align-items-center"
   >
-    <Logo />
+    <Logo class="header__logo" />
 
     <b-navbar-toggle
       target="navbar-toggle-collapse"
