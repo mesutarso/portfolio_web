@@ -1,9 +1,9 @@
 <template>
   <b-navbar
-    toggleable="sm"
+    toggleable="md"
+    fixed="top"
     type="light"
-    sticky
-    class="d-flex justify-content-around align-items-center"
+    class="header d-flex justify-content-around align-items-center"
   >
     <Logo class="header__logo" />
 
@@ -48,19 +48,19 @@ export default {
         },
         {
           name: "A propos",
-          url: "/#a-propos",
+          url: "#a-propos",
         },
         {
           name: "Compétences",
-          url: "/#competences",
+          url: "#competences",
         },
         {
           name: "Projects",
-          url: "/#projects",
+          url: "#projects",
         },
         {
           name: "Contact",
-          url: "/#contact",
+          url: "#contact",
         },
       ],
     };

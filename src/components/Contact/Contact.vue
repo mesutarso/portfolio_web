@@ -1,7 +1,9 @@
 <template>
   <section class="contact">
     <b-row class="flex-wrap-reverse align-items-center">
-      <b-col md="6" sm="12"> <Illustration source="/img/contact.gif" /></b-col>
+      <b-col md="6" sm="12">
+        <Illustration source="/img/contactIllustration.gif"
+      /></b-col>
       <b-col md="6" sm="12">
         <SubHeading title="Contact" class="primary-color" />
         <Description

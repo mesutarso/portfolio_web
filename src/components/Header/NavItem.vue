@@ -1,8 +1,8 @@
 <template>
   <b-nav-item>
-    <b-link :href="link" class="nav-link">
+    <router-link :to="link" class="nav-link">
       {{ title }}
-    </b-link>
+    </router-link>
   </b-nav-item>
 </template>
 <script>

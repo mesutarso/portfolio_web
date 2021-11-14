@@ -1,5 +1,7 @@
 .hero {
   padding: 50px 100px !important;
+  position: relative;
+  top: 150px;
   @media (max-width: 998px) {
     padding: 30px 50px !important;
   }

@@ -1,4 +1,6 @@
 .footer {
+  position: relative;
+  top: 150px;
   padding: 100px 100px 20px !important;
   background-color: $textColor;
   @media (max-width: 998px) {
