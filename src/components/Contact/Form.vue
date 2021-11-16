@@ -4,39 +4,39 @@
       <SelectField
         label="Civilité"
         id="civilite"
-        :model="form.civilite"
+        v-model="form.civilite"
         :options="civilites"
       />
       <InputField
         label="Nom Complet"
         id="name"
         placeholder="Écrivez Votre Nom complet"
-        :model="form.name"
+        v-model="form.name"
       />
       <InputField
         label="Adresse Electronique"
         id="email"
         type="email"
         placeholder="Écrivez Votre Adresse Electronique"
-        :model="form.email"
+        v-model="form.email"
       />
       <InputField
         label="Téléphone"
         id="email"
         type="tel"
         placeholder="Écrivez Votre Numéro de Téléphone"
-        :model="form.phone"
+        v-model="form.phone"
       />
       <SelectField
         label="Type de service"
         id="service"
-        :model="form.civilite"
+        v-model="form.service"
         :options="services"
       />
       <SelectField
         label="Type de contrat"
         id="service"
-        :model="form.contrat"
+        v-model="form.contrat"
         :options="contrats"
       />
 
@@ -44,6 +44,7 @@
         >Envoyer</b-button
       >
     </b-form>
+    {{ form }}
   </div>
 </template>
 

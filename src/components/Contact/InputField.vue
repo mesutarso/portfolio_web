@@ -2,11 +2,13 @@
   <b-form-group :label="label" :label-for="id" class="contact__input mb-4">
     <b-form-input
       :id="id"
-      v-model="model"
       :placeholder="placeholder"
       :type="type"
+      :value="value"
+      @input="handleInput"
       required
     ></b-form-input>
+
     <span v-if="error" class="contact__error red-text">{{ error }}</span>
   </b-form-group>
 </template>
@@ -32,15 +34,20 @@ export default {
       required: false,
       default: "text",
     },
-
-    model: {
+    value: {
       type: String,
       required: false,
+      default: "",
     },
     error: {
       type: String,
       required: false,
       default: "",
+    },
+  },
+  methods: {
+    handleInput(value) {
+      this.$emit("input", value);
     },
   },
 };

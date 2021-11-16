@@ -7,7 +7,8 @@
   >
     <b-form-select
       :id="id"
-      v-model="model"
+      :value="value"
+      @input="handleInput"
       :options="options"
       class="form-select"
       required
@@ -27,17 +28,22 @@ export default {
       type: String,
       required: true,
     },
-    model: {
-      type: String,
-      required: false,
-    },
     options: {
       type: Array,
+      required: true,
+    },
+    value: {
+      type: String,
       required: true,
     },
     error: {
       type: String,
       required: false,
+    },
+  },
+  methods: {
+    handleInput(value) {
+      this.$emit("input", value);
     },
   },
 };
