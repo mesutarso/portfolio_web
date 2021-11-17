@@ -1,31 +1,15 @@
-import Vue from "vue";
 import Vuex from "vuex";
-import Axios from "axios";
+import Vue from "vue";
+import projects from "./modules/projects";
+import skills from "./modules/skills";
 
+// Load Vuex
 Vue.use(Vuex);
 
+// Create store
 export default new Vuex.Store({
-  state: {
-    projects: [],
-    services: [],
-    skills: [],
+  modules: {
+    projects,
+    skills,
   },
-  mutations: {
-    setProject(state, project) {
-      state.projects = project;
-    },
-    setSkill(state, skill) {
-      state.skills = skill;
-    },
-    setService(state, service) {
-      state.services = service;
-    },
-  },
-  actions: {
-    async getProjects({ commit }) {
-      let project = (await Axios.get("/api/projects")).data;
-      commit("setProject", project);
-    },
-  },
-  modules: {},
 });

@@ -6,6 +6,15 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import "./styles/main.scss";
+import Cloudinary, { CldImage, CldTransformation } from "cloudinary-vue";
+
+Vue.use(Cloudinary, {
+  configuration: { cloudName: "me22chack" },
+  components: {
+    CldImage,
+    CldTransformation,
+  },
+});
 
 Vue.config.productionTip = false;
 // Make BootstrapVue available throughout your project
