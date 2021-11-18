@@ -33,8 +33,8 @@ export default {
       required: true,
     },
     value: {
-      type: String,
       required: true,
+      default: "",
     },
     error: {
       type: String,

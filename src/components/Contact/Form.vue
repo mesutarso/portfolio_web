@@ -1,42 +1,42 @@
 <template>
   <div>
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+    <b-form @submit="onSubmit" v-if="show">
       <SelectField
         label="Civilité"
         id="civilite"
-        v-model="form.civilite"
+        v-model="getForm.civilite"
         :options="civilites"
       />
       <InputField
         label="Nom Complet"
         id="name"
         placeholder="Écrivez Votre Nom complet"
-        v-model="form.name"
+        v-model="getForm.name"
       />
       <InputField
         label="Adresse Electronique"
         id="email"
         type="email"
         placeholder="Écrivez Votre Adresse Electronique"
-        v-model="form.email"
+        v-model="getForm.email"
       />
       <InputField
         label="Téléphone"
         id="email"
         type="tel"
         placeholder="Écrivez Votre Numéro de Téléphone"
-        v-model="form.phone"
+        v-model="getForm.phone"
       />
       <SelectField
         label="Type de service"
         id="service"
-        v-model="form.service"
+        v-model="getForm.service"
         :options="services"
       />
       <SelectField
         label="Type de contrat"
         id="service"
-        v-model="form.contrat"
+        v-model="getForm.contrat"
         :options="contrats"
       />
 
@@ -51,6 +51,7 @@
 <script>
 import InputField from "./InputField.vue";
 import SelectField from "./SelectField.vue";
+import axios from "axios";
 export default {
   name: "Form",
   components: {
@@ -102,23 +103,24 @@ export default {
     };
   },
   methods: {
-    onSubmit(event) {
-      event.preventDefault();
-      alert(JSON.stringify(this.form));
+    onSubmit: function (e) {
+      e.preventDefault();
+      this.sendForm();
     },
-    onReset(event) {
-      event.preventDefault();
-      // Reset our form values
-      this.form.email = "";
-      this.form.name = "";
-      this.form.food = null;
-      this.form.checked = [];
-      // Trick to reset/clear native browser form validation state
+    async sendForm() {
       this.show = false;
-      this.$nextTick(() => {
-        this.show = true;
-      });
+      const response = await axios.post("/api/contact", this.form);
+      this.form = {
+        civilite: null,
+        name: "",
+        email: "",
+        phone: "",
+        service: null,
+        contrat: null,
+      };
+      this.show = true;
     },
   },
+  computed: {},
 };
 </script>
