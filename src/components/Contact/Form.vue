@@ -1,70 +1,135 @@
 <template>
   <div>
-    <b-form @submit="onSubmit" v-if="show">
-      <SelectField
-        label="Civilité"
-        id="civilite"
-        v-model="getForm.civilite"
-        :options="civilites"
-      />
-      <InputField
-        label="Nom Complet"
-        id="name"
-        placeholder="Écrivez Votre Nom complet"
-        v-model="getForm.name"
-      />
-      <InputField
-        label="Adresse Electronique"
-        id="email"
-        type="email"
-        placeholder="Écrivez Votre Adresse Electronique"
-        v-model="getForm.email"
-      />
-      <InputField
-        label="Téléphone"
-        id="email"
-        type="tel"
-        placeholder="Écrivez Votre Numéro de Téléphone"
-        v-model="getForm.phone"
-      />
-      <SelectField
-        label="Type de service"
-        id="service"
-        v-model="getForm.service"
-        :options="services"
-      />
-      <SelectField
-        label="Type de contrat"
-        id="service"
-        v-model="getForm.contrat"
-        :options="contrats"
-      />
-
-      <b-button type="submit" class="btn-link text-center w-50"
-        >Envoyer</b-button
+    <b-form @submit.stop.prevent="onSubmit">
+      <b-form-group
+        id="civilite-group-2"
+        label="Civilités"
+        label-for="civilite"
       >
+        <b-form-select
+          id="civilite"
+          name="civilite"
+          v-model="form.civilite"
+          v-validate="{ required: true }"
+          :options="civilites"
+          :state="validateState('civilite')"
+          aria-describedby="civilite-live-feedback"
+          data-vv-as="Civilité"
+        ></b-form-select>
+
+        <b-form-invalid-feedback id="civilite-live-feedback">{{
+          veeErrors.first("civilite")
+        }}</b-form-invalid-feedback>
+      </b-form-group>
+      <b-form-group id="noms-group-1" label="Nom Complet" label-for="noms">
+        <b-form-input
+          id="noms"
+          name="noms"
+          v-model="form.noms"
+          v-validate="{ required: true, min: 3 }"
+          :state="validateState('noms')"
+          aria-describedby="noms-live-feedback"
+          data-vv-as="Noms"
+        ></b-form-input>
+
+        <b-form-invalid-feedback id="noms-live-feedback">{{
+          veeErrors.first("noms")
+        }}</b-form-invalid-feedback>
+      </b-form-group>
+      <b-form-group id="email-group-1" label="Email" label-for="email">
+        <b-form-input
+          id="email"
+          name="email"
+          v-model="form.email"
+          v-validate="{ required: true, min: 3 }"
+          :state="validateState('email')"
+          aria-describedby="email-live-feedback"
+          data-vv-as="email"
+        ></b-form-input>
+
+        <b-form-invalid-feedback id="email-live-feedback">{{
+          veeErrors.first("email")
+        }}</b-form-invalid-feedback>
+      </b-form-group>
+      <b-form-group id="phone-group-1" label="Telephone" label-for="phone">
+        <b-form-input
+          id="phone"
+          name="phone"
+          v-model="form.telephone"
+          type="tel"
+          v-validate="{ required: true, min: 3 }"
+          :state="validateState('phone')"
+          aria-describedby="phone-live-feedback"
+          data-vv-as="phone"
+        ></b-form-input>
+
+        <b-form-invalid-feedback id="phone-live-feedback">{{
+          veeErrors.first("phone")
+        }}</b-form-invalid-feedback>
+      </b-form-group>
+      <b-form-group
+        id="service-group-2"
+        label="Type de Service"
+        label-for="service"
+      >
+        <b-form-select
+          id="service"
+          name="service"
+          v-model="form.service"
+          v-validate="{ required: true }"
+          :options="services"
+          :state="validateState('service')"
+          aria-describedby="service-live-feedback"
+          data-vv-as="Civilité"
+        ></b-form-select>
+
+        <b-form-invalid-feedback id="service-live-feedback">{{
+          veeErrors.first("service")
+        }}</b-form-invalid-feedback>
+      </b-form-group>
+      <b-form-group
+        id="contrat-group-2"
+        label="Type de contrat"
+        label-for="contrat"
+      >
+        <b-form-select
+          id="contrat"
+          name="contrat"
+          v-model="form.contrat"
+          v-validate="{ required: true }"
+          :options="contrats"
+          :state="validateState('contrat')"
+          aria-describedby="contrat-live-feedback"
+          data-vv-as="Civilité"
+        ></b-form-select>
+
+        <b-form-invalid-feedback id="contrat-live-feedback">{{
+          veeErrors.first("contrat")
+        }}</b-form-invalid-feedback>
+      </b-form-group>
+
+      <b-button type="submit" class="btn-link">Envoyer la demande</b-button>
     </b-form>
-    {{ form }}
   </div>
 </template>
 
+
+
 <script>
-import InputField from "./InputField.vue";
-import SelectField from "./SelectField.vue";
-import axios from "axios";
 export default {
   name: "Form",
-  components: {
-    InputField,
-    SelectField,
-  },
   data() {
     return {
+      foods: [
+        { value: null, text: "Choose..." },
+        { value: "apple", text: "Apple" },
+        { value: "orange", text: "Orange" },
+      ],
       form: {
         civilite: null,
-        name: "",
+        nom: "",
         email: "",
-        phone: "",
+        telephone: "",
         service: null,
         contrat: null,
       },
@@ -99,28 +164,35 @@ export default {
         "Contrat de Formation",
         "Contrat de Télé-Travail",
       ],
-      show: true,
     };
   },
   methods: {
-    onSubmit: function (e) {
-      e.preventDefault();
-      this.sendForm();
+    validateState(ref) {
+      if (
+        this.veeFields[ref] &&
+        (this.veeFields[ref].dirty || this.veeFields[ref].validated)
+      ) {
+        return !this.veeErrors.has(ref);
+      }
+      return null;
     },
-    async sendForm() {
-      this.show = false;
-      const response = await axios.post("/api/contact", this.form);
+    resetForm() {
       this.form = {
-        civilite: null,
-        name: "",
-        email: "",
-        phone: "",
-        service: null,
-        contrat: null,
+        name: null,
+        food: null,
       };
-      this.show = true;
+
+      this.$nextTick(() => {
+        this.$validator.reset();
+      });
+    },
+    onSubmit() {
+      this.$validator.validateAll().then((result) => {
+        if (!result) {
+          return;
+        }
+      });
     },
   },
-  computed: {},
 };
 </script>
