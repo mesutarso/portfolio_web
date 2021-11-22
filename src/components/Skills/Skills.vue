@@ -1,5 +1,5 @@
 <template>
-  <section class="skills">
+  <section class="skills" id="competences">
     <b-row class="flex-wrap align-items-center">
       <b-col md="6" sm="12">
         <SubHeading title="Mes Compétences" class="primary-color" />

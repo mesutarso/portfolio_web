@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="hero" id="hero">
     <b-row class="flex-wrap-reverse align-items-center">
       <b-col md="6" sm="12">
         <Heading title="FullStack Developer" class="primary-color" />

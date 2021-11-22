@@ -1,8 +1,8 @@
 <template>
   <b-nav-item>
-    <router-link :to="link" class="nav-link">
-      {{ title }}
-    </router-link>
+    <b-nav-item :to="link" v-scroll-to="link" class="nav-link">{{
+      title
+    }}</b-nav-item>
   </b-nav-item>
 </template>
 <script>

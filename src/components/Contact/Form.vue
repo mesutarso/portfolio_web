@@ -116,6 +116,7 @@
 
 
 <script>
+import axios from "axios";
 export default {
   name: "Form",
   data() {
@@ -191,6 +192,16 @@ export default {
         if (!result) {
           return;
         }
+        console.log(result);
+        axios
+          .post("/api/form", this.form)
+          .then((response) => {
+            console.log(response);
+            this.resetForm();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
       });
     },
   },

@@ -44,7 +44,7 @@ export default {
       menuItems: [
         {
           name: "Accueil",
-          url: "/",
+          url: "#hero",
         },
         {
           name: "A propos",

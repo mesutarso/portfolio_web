@@ -1,5 +1,5 @@
 <template>
-  <section class="contact">
+  <section class="contact" id="contact">
     <b-row class="flex-wrap-reverse align-items-center">
       <b-col md="6" sm="12">
         <Illustration source="/img/contactIllustration.gif"

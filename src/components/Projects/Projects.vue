@@ -1,5 +1,5 @@
 <template>
-  <section class="projects">
+  <section class="projects" id="projects">
     <b-row class="flex-wrap align-items-start">
       <b-col cols="12" md="6" class="mb-5">
         <SubHeading title="Mes Récents Project" class="secondary-color" />
