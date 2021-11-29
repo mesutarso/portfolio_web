@@ -194,7 +194,7 @@ export default {
         }
         console.log(result);
         axios
-          .post("/api/form", this.form)
+          .post("http://localhost:8000/api/contacts", this.form)
           .then((response) => {
             console.log(response);
             this.resetForm();
